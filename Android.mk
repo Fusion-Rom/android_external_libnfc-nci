@@ -6,7 +6,7 @@ $(patsubst ./%,%, \
  )
 endef
 
-
+LOCAL_CFLAGS += -O3
 LOCAL_PATH:= $(call my-dir)
 NFA := src/nfa
 NFC := src/nfc
@@ -24,7 +24,7 @@ LOCAL_ARM_MODE := arm
 LOCAL_MODULE := libnfc-nci
 LOCAL_MODULE_TAGS := optional
 LOCAL_SHARED_LIBRARIES := libhardware_legacy libcutils liblog libdl libstlport libhardware
-LOCAL_CFLAGS := $(D_CFLAGS)
+LOCAL_CFLAGS := $(D_CFLAGS) -O3
 LOCAL_C_INCLUDES := external/stlport/stlport bionic/ bionic/libstdc++/include \
     $(LOCAL_PATH)/src/include \
     $(LOCAL_PATH)/src/gki/ulinux \
